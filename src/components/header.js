@@ -1,16 +1,18 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import headerStyles from '../styles/header.module.scss'
+import headerStyles from './header.module.scss'
 const Header = () => {
     return (
-        <header>
-        <h1>Matt Hoffman Photo</h1>
+        <header className={headerStyles.header}>
+        <h1>
+            <Link className={headerStyles.title} to='/'>Matt Hoffman Photo</Link>
+        </h1>
         <nav>
-            <ul>
-                <li><Link className={headerStyles.link} to="/">Home</Link></li>
-                <li><Link to='/about'>About Me</Link></li>
-                <li><Link to='/blog'>Blog</Link></li>
-                <li><Link to='/contact'>Contact Me</Link></li>
+            <ul className={headerStyles.navList}>
+                <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/">Home</Link></li>
+                <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/about'>About Me</Link></li>
+                <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/blog'>Blog</Link></li>
+                <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/contact'>Contact Me</Link></li>
             </ul>
         </nav>
     </header>
